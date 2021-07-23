@@ -19,6 +19,10 @@
     <input type="text" th:field="*{salary}" id="salary"/>
     <div style="color:red" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></div>
     <br>
+    <label for="department">Enter department: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
+    <input type="text" th:field="*{department}" id="department"/>
+    <div style="color:red" th:if="${#fields.hasErrors('department')}" th:errors="*{department}"></div>
+    <br>
     <label for="email">Enter email: &nbsp&nbsp&nbsp&nbsp&nbsp </label>
     <input type="text" th:field="*{email}" id="email"/>
     <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
