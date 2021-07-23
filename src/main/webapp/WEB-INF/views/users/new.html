@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new user</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/admin}" th:object="${user}">
+    <label for="name">Enter name: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+    <br>
+    <label for="surname">Enter surname: &nbsp&nbsp</label>
+    <input type="text" th:field="*{surname}" id="surname"/>
+    <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></div>
+    <br>
+    <label for="salary">Enter salary: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
+    <input type="text" th:field="*{salary}" id="salary"/>
+    <div style="color:red" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></div>
+    <br>
+    <label for="email">Enter email: &nbsp&nbsp&nbsp&nbsp&nbsp </label>
+    <input type="text" th:field="*{email}" id="email"/>
+    <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+    <br>
+    <label for="password">Enter password: </label>
+    <input type="text" th:field="*{password}" id="password"/>
+    <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+    <br>
+    <label for="role">Enter role: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
+
+    <!--    manual ok-->
+    <!--    <input type="text" th:field="*{roles}" id="role"/>-->
+    <!--    <div style="color:red" th:if="${#fields.hasErrors('roles')}" th:errors="*{roles}"></div>-->
+
+    <select th:field="*{roles}" id="role">
+        <option th:value="'ROLE_ADMIN'" th:text="ADMIN"></option>
+        <option th:value="'ROLE_USER'" th:text="USER"></option>
+    </select>
+
+    <br><br>
+    <input type="submit" value="Save!"/>
+</form>
+
+
+
+<!--<div>-->
+<!--    <select required type="text" multiple id="sel2" name="roles">-->
+<!--        <option value="2">ADMIN</option>-->
+<!--        <option value="1">USER</option>-->
+<!--    </select>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--<select th:field="*{role}">-->
+<!--    <option th:value="'ADMIN'" th:text="ADMIN"></option>-->
+<!--    <option th:value="'USER'" th:text="USER"></option>-->
+<!--</select>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--<select th:field="*{role}">-->
+<!--    <option value="">Select Country</option>-->
+<!--    <option th:each="role : ${role}" th:value="${role}" th:text="${role}"></option>-->
+<!--</select>-->
+<!--</div>-->
+
+<!--<ul>-->
+<!--    <li th:each="role : ${role}">-->
+<!--        <input type="checkbox" name="sel_roles" th:field="*{role}" th:value="${role}" th:text="${role}" />-->
+<!--    </li>-->
+<!--</ul>-->
+
+<!--<th:block th:each="role: ${listRoles}">-->
+<!--    <input type="checkbox" th:field="*{roles}"-->
+<!--           th:text="${role.role}"-->
+<!--           th:value="${role.id}" />-->
+<!--</th:block>-->
+
+
+<br>
+<form th:action="@{/logout}">
+    <input type="submit" value="LOGOUT"/>
+</form>
+
+</body>
+</html>
