@@ -31,57 +31,14 @@
     <input type="text" th:field="*{password}" id="password"/>
     <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
     <br>
-    <label>Enter role: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
+    <label>Set role: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
     <input type="checkbox" th:field="*{roles}" value="ROLE_ADMIN"/> admin
     <input type="checkbox" th:field="*{roles}" value="ROLE_USER"/> user
 
-    <!--    manual ok-->
-    <!--    <input type="text" th:field="*{roles}" id="role"/>-->
-    <!--    <div style="color:red" th:if="${#fields.hasErrors('roles')}" th:errors="*{roles}"></div>-->
-
-<!--    <select th:field="*{roles}" id="role">-->
-<!--        <option th:value="'ROLE_ADMIN'" th:text="ADMIN"></option>-->
-<!--        <option th:value="'ROLE_USER'" th:text="USER"></option>-->
-<!--    </select>-->
 
     <br><br>
     <input type="submit" value="Save!"/>
 </form>
-
-
-
-<!--<div>-->
-<!--    <select required type="text" multiple id="sel2" name="roles">-->
-<!--        <option value="2">ADMIN</option>-->
-<!--        <option value="1">USER</option>-->
-<!--    </select>-->
-<!--</div>-->
-
-<!--<div>-->
-<!--<select th:field="*{role}">-->
-<!--    <option th:value="'ADMIN'" th:text="ADMIN"></option>-->
-<!--    <option th:value="'USER'" th:text="USER"></option>-->
-<!--</select>-->
-<!--</div>-->
-
-<!--<div>-->
-<!--<select th:field="*{role}">-->
-<!--    <option value="">Select Country</option>-->
-<!--    <option th:each="role : ${role}" th:value="${role}" th:text="${role}"></option>-->
-<!--</select>-->
-<!--</div>-->
-
-<!--<ul>-->
-<!--    <li th:each="role : ${role}">-->
-<!--        <input type="checkbox" name="sel_roles" th:field="*{role}" th:value="${role}" th:text="${role}" />-->
-<!--    </li>-->
-<!--</ul>-->
-
-<!--<th:block th:each="role: ${listRoles}">-->
-<!--    <input type="checkbox" th:field="*{roles}"-->
-<!--           th:text="${role.role}"-->
-<!--           th:value="${role.id}" />-->
-<!--</th:block>-->
 
 
 <br>

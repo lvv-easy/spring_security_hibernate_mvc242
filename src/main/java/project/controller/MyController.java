@@ -76,9 +76,4 @@ public class MyController {
         userService.delete(id);
         return "redirect:/admin";
     }
-
-//    @RequestMapping(value = "login", method = RequestMethod.GET)
-//    public String loginPage() {
-//        return "login";
-//    }
 }

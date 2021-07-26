@@ -42,15 +42,9 @@
 
 </table>
 
-
-<!--<div th:each="user : ${user}">-->
-<!--    <a th:href="@{/users/{id}(id=${user.getId()})}"  th:text="${user.getName() + ' ' + user.getSurname() + ', salary ' + user.getAge()}"></a>-->
-<!--</div>-->
-
 <br>
 <hr>
 
-<!--<a th:href="@{/users/new}">create new user</a>-->
 <form th:action="@{/admin/new}">
     <input type="submit" value="CREATE NEW"/>
 </form>

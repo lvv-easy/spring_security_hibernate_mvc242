@@ -10,7 +10,7 @@ import project.entity.User;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    private UserDAO userDAO;
+    private final UserDAO userDAO;
 
     public UserDetailsServiceImpl(UserDAO userDAO) {
         this.userDAO = userDAO;
