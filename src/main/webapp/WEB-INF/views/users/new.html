@@ -31,16 +31,18 @@
     <input type="text" th:field="*{password}" id="password"/>
     <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
     <br>
-    <label for="role">Enter role: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
+    <label>Enter role: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
+    <input type="checkbox" th:field="*{roles}" value="ROLE_ADMIN"/> admin
+    <input type="checkbox" th:field="*{roles}" value="ROLE_USER"/> user
 
     <!--    manual ok-->
     <!--    <input type="text" th:field="*{roles}" id="role"/>-->
     <!--    <div style="color:red" th:if="${#fields.hasErrors('roles')}" th:errors="*{roles}"></div>-->
 
-    <select th:field="*{roles}" id="role">
-        <option th:value="'ROLE_ADMIN'" th:text="ADMIN"></option>
-        <option th:value="'ROLE_USER'" th:text="USER"></option>
-    </select>
+<!--    <select th:field="*{roles}" id="role">-->
+<!--        <option th:value="'ROLE_ADMIN'" th:text="ADMIN"></option>-->
+<!--        <option th:value="'ROLE_USER'" th:text="USER"></option>-->
+<!--    </select>-->
 
     <br><br>
     <input type="submit" value="Save!"/>

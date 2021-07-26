@@ -35,6 +35,13 @@
 <form th:action="@{/logout}">
     <input type="submit" value="LOGOUT"/>
 </form>
+<br>
+
+<div sec:authorize="hasRole('ADMIN')">
+<form th:action="@{/admin}">
+    <input type="submit" value="ADMIN PAGE"/>
+</form>
+</div>
 
 </body>
 </html>

@@ -17,7 +17,7 @@ import java.security.Principal;
 @RequestMapping("/")
 public class MyController {
 
-    private UserService userService;
+    private final UserService userService;
 
     @Autowired
     public MyController(UserService userService) {
@@ -32,7 +32,7 @@ public class MyController {
     }
 
     @GetMapping("/user")
-    public String showOneUserPage(Model model, Authentication authentication) throws NoSuchFieldException {
+    public String showOneUserPage(Model model, Authentication authentication) {
         model.addAttribute("user", userService.findPersonByEmail(((User) authentication.getPrincipal()).getEmail()));
         return "users/show";
     }
