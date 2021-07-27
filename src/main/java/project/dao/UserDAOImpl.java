@@ -30,16 +30,16 @@ public class UserDAOImpl implements UserDAO{
     }
 
     @Override
-    public void update(User updatedUser, Long id) {
-        User user = em.find(User.class, id);
-        user.setName(updatedUser.getName());
-        user.setSurname(updatedUser.getSurname());
-        user.setSalary(updatedUser.getSalary());
-        user.setDepartment(updatedUser.getDepartment());
-        user.setEmail(updatedUser.getEmail());
-        user.setPassword(updatedUser.getPassword());
-        user.setRoles(updatedUser.getRoles());
-        em.merge(user);
+    public void update(User updatedUser) {
+//        User user = em.find(User.class, id);
+//        user.setName(updatedUser.getName());
+//        user.setSurname(updatedUser.getSurname());
+//        user.setSalary(updatedUser.getSalary());
+//        user.setDepartment(updatedUser.getDepartment());
+//        user.setEmail(updatedUser.getEmail());
+//        user.setPassword(updatedUser.getPassword());
+//        user.setRoles(updatedUser.getRoles());
+        em.merge(updatedUser);
     }
 
     @Override

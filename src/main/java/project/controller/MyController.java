@@ -60,14 +60,13 @@ public class MyController {
     }
 
     @PatchMapping("admin/{id}")
-    public String UpdateUser(@ModelAttribute("user") @Valid User user, BindingResult bindingResult,
-                               @PathVariable("id") Long id) {
+    public String UpdateUser(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             return "users/edit";
         }
 
-        userService.update(user, id);
+        userService.update(user);
         return "redirect:/admin";
     }
 
